@@ -3,6 +3,8 @@
  *= require_self
  */
 
+ @import "bootstrap/scss/bootstrap";
+
  .base-container {
     max-width: 768px;
     margin: 0 auto;
