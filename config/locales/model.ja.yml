@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      movie: 動画
+      aws_text: AWSテキスト教材
+    attributes:
+      movie:
+        title: タイトル
+        url: 動画格納パス
+        category: カテゴリー
+      aws_text:
+        title: タイトル
+        content: 内容
