@@ -18,6 +18,7 @@ group :development, :test do
 
   gem 'rails-i18n'
   gem 'devise-i18n'
+  gem 'activeadmin'
 end
 
 group :development do
