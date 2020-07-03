@@ -1,7 +1,22 @@
- @import "bootstrap/scss/bootstrap";
+/*
+ *= require_tree .
+ *= require_self
+ */
 
- .base-container {
+@import "bootstrap/scss/bootstrap";
+
+.base-container {
     max-width: 768px;
     margin: 0 auto;
     padding: 1rem;
+  }
+
+// ナビバーのテキストサイズを変更
+.collapse {
+    font-size: 13px;
+  }
+
+body {
+    // navbar-fixed-top 対応
+    padding-top: 80px;
   }
