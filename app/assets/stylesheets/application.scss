@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 /*
  *= require_tree .
  *= require_self
  */
 
+
 @import "bootstrap/scss/bootstrap";
+//  @import "bootstrap/scss/bootstrap";（コンフリクトのため残す）
 
 .base-container {
     max-width: 768px;
