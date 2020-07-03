@@ -9,9 +9,7 @@ namespace :import_csv do
         list = Import.csv_data(path: 'db/csv_data/aws_text_data.csv')
         AwsText.create!(list)
     end
-end
 
-namespace :import_csv do
     # rake import_csv:movies コマンドで
     # movie_dataファイルからデータベースにインポートできます
     desc "Movie CSVデータのインポート"
@@ -21,3 +19,4 @@ namespace :import_csv do
         Movie.create!(list)
     end
 end
+
