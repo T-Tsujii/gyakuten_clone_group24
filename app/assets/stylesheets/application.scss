@@ -15,3 +15,39 @@ body {
     // navbar-fixed-top 対応
     padding-top: 80px;
   }
+
+.video-card {
+  @extend .card;
+  @extend .border-primary;
+  @extend .rounded;
+  background: #ddd;
+  border: 1px #ff0000 solid;
+  padding: 0 5px 0px;
+  margin-bottom: 5px;
+
+}
+.card-title {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.video-container {
+  position: relative;
+  overflow: hidden;
+}
+.video-expander {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 105%;
+}
+.ratio-1_1:before {
+  content: "";
+  display: block;
+  padding-top: 80%;
+}
+
+.width-max{
+  max-width: 1020px;
+  margin: 0 auto;
+}
