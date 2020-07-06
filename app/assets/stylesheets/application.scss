@@ -16,7 +16,8 @@ body {
     padding-top: 80px;
   }
 
-.card {
+.video-card {
+  @extend .card;
   @extend .border-primary;
   @extend .rounded;
   background: #ddd;
@@ -44,4 +45,8 @@ body {
   content: "";
   display: block;
   padding-top: 80%;
+}
+
+.widthMax{
+  margin:0 calc(50% - 50vw);
 }
