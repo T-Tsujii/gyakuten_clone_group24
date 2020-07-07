@@ -11,9 +11,9 @@
                 </tr>
             </thead>
             <tbody>
-            <% @aws_texts.each_with_index do |text ,id| %>
+            <% @aws_texts.each.with_index(1) do |text ,id| %>
                 <tr>
-                    <td><%= id+1 %></td>
+                    <td><%= id %></td>
                     <td><%= text.title %></td>
                 </tr>
             <% end %>
