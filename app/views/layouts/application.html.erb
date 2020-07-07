@@ -18,9 +18,8 @@
       <%= render "layouts/flash" %>
     </header>
     <main>
-      <div class="base-container">
+      <div class="<%= "base-container" unless controller.action_name == 'index' %>">
         <%= yield %>
-        
       </div>
     </main>
     <footer>
