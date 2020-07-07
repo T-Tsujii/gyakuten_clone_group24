@@ -18,7 +18,11 @@
       <%= render "layouts/flash" %>
     </header>
     <main>
-      <div class="<%= "base-container" unless controller.action_name == 'index' %>">
+      <% if controller.controller_name == 'movies' %>
+        <div class="video-base-container">
+      <% else %>
+        <div class="base-container">
+      <% end %>
         <%= yield %>
       </div>
     </main>

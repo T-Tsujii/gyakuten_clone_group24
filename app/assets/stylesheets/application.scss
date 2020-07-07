@@ -46,8 +46,7 @@ body {
   display: block;
   padding-top: 80%;
 }
-
-.width-max{
+.video-base-container {
+  @extend .base-container;
   max-width: 1020px;
-  margin: 0 auto;
 }
