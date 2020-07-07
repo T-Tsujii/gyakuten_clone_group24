@@ -1,0 +1,32 @@
+<div id ="container">
+    <div class="container">
+        新規投稿
+        【質問】
+        【詳細】
+    </div>
+    <section id="questions">
+        <div class="container">
+            <% @questions.each do |question| %>
+                <div class="question-container">
+                    <a href="#">
+                        <div class="question">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <div class="title-container">
+                                        <p class="title"><%= question.title %></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="info text-right">
+                                        <p><%= question.created_at.strftime("%Y年%m月%d日") %></p>
+                                        <p><%= "#{0} Views" %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% end %>
+        </div>
+    </section>
+</div>
