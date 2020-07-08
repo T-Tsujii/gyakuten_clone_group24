@@ -1,10 +1,10 @@
 module ApplicationHelper
 
   def base_container
-    if controller.controller_name == "movies"
-      return "video-base-container"
-    else 
-      return "base-container"
+    if controller_name == "movies"
+      "video-base-container"
+    else
+      "base-container"
     end
   end
 
