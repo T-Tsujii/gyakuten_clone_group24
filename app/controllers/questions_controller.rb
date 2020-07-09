@@ -2,12 +2,12 @@ class QuestionsController < ApplicationController
 
     def index
       @questions = Question.all
-      @new_question = Question.new
+      @question = Question.new
     end
 
     def create
       Question.create!(question_params)
-      redirect_to questions_path
+      redirect_to questions_path, notice: "質問を受け付けました。"
     end
 
     private
