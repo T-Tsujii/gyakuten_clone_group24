@@ -1,4 +1,4 @@
-<div class="row justify-content-center width-max">
+<div class="row justify-content-center">
   <% @movies.each do |movie| %>
     <div class="col-md-4 mb-5">
       <div class="video-card video-container h-100">
@@ -11,4 +11,7 @@
       </div>
     </div>
   <% end %>
+</div>
+<div class="row justify-content-center">
+  <%= paginate @movies %>
 </div>
