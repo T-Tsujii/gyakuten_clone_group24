@@ -8,11 +8,11 @@
         <div class="container">
             <% @questions.each do |question| %>
                 <div class="question-container">
-                    <a href="#">
+                    <%= link_to(question_path(question.id)) do %>
                         <div class="question">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <div class="title-container">
+                                    <div class="title-container">            
                                         <p class="title"><%= question.title %></p>
                                     </div>
                                 </div>
@@ -24,7 +24,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    <% end %>
                 </div>
             <% end %>
         </div>
