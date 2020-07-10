@@ -8,7 +8,7 @@
         <div class="container">
             <% @questions.each do |question| %>
                 <div class="question-container">
-                    <%= link_to(question_path(question.id)) do %>
+                    <%= link_to question do %>
                         <div class="question">
                             <div class="row">
                                 <div class="col-md-7">

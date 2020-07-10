@@ -1,3 +1,6 @@
+require "redcarpet"
+require "coderay"
+
 module ApplicationHelper
 
   def base_container
@@ -7,10 +10,6 @@ module ApplicationHelper
       "base-container"
     end
   end
-
-
-  require "redcarpet"
-  require "coderay"
 
   class HTMLwithCoderay < Redcarpet::Render::HTML
     def block_code(code, language)
