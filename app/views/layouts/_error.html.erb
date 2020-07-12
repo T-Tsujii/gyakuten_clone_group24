@@ -1,0 +1,7 @@
+<% if @question.errors.any? %>
+  <ul class="alert alert-danger" >
+    <% @question.errors.full_messages.each do |msg| %>
+      <li class="text-danger" role="alert"><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -92,4 +92,8 @@ body {
 
 .field_with_errors {
   display: contents;
+  textarea {
+    @extend .is-invalid;
+    background-color: #f8d7da;
+  }
 }

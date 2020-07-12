@@ -1,21 +1,18 @@
 class QuestionsController < ApplicationController
 
     def index
-      if flash[:params].blank?
-        @questions = Question.all
-        @question = Question.new
-      else
-        @questions = Question.all
-        @question = Question.new(flash[:params])
-      end
+      @questions = Question.order(id: :desc)
+      @question = Question.new
     end
 
     def create
-      post = Question.new(question_params)
-      if post.save
+      @question = Question.new(question_params)
+      if @question.save
         redirect_to questions_path, notice: "質問を受け付けました。" and return
       else
-        redirect_to questions_path, flash: {params: question_params, alert: "必須項目は全て入力してください。"}
+        @questions = Question.order(id: :desc)
+        flash.now[:alert] = "記入漏れがあります。"
+        render :index
       end
     end
 
