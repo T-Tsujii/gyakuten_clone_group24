@@ -89,3 +89,10 @@ body {
   font-size: 17px;
 
 }
+
+.field_with_errors {
+  display: contents;
+  textarea {
+    @extend .is-invalid;
+  }
+}
