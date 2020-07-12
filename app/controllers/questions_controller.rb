@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     def create
       @question = Question.new(question_params)
       if @question.save
-        redirect_to questions_path, notice: "質問を受け付けました。" and return
+        redirect_to questions_path, notice: "質問を受け付けました。"
       else
         @questions = Question.order(id: :desc)
         flash.now[:alert] = "記入漏れがあります。"
