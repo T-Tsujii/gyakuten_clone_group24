@@ -1,14 +1,14 @@
 class SolutionsController < ApplicationController
 
-    def index
-        @question = Question.find(params[:id])
-    end
-
     def create
         @solution = Solution.new(solution_params)
         @solution.question_id = params[:question_id]
-        @solution.save
-        redirect_to questions_path
+        if @solution.save
+            redirect_to question_path(@solution.question.id)
+        else
+            flash[:alert] = "回答文を入力してください"
+            redirect_to question_path(@solution.question.id)
+        end
     end
       
     private
