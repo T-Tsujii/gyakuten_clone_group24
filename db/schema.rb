@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2020_07_16_073903) do
   end
 
   create_table "ruby_rails_texts", force: :cascade do |t|
+    t.string "image"
     t.string "genre"
     t.string "title"
     t.text "content"
