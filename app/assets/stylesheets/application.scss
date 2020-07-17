@@ -97,6 +97,11 @@ body {
   }
 }
 
+.ruby-rails-base-container {
+  @extend .base-container;
+  max-width: 1020px;
+}
+
 #container{
   padding:120px 0 80px 0;
   margin: 0 auto;
