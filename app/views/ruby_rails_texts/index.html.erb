@@ -1,0 +1,18 @@
+<div id="container">
+    <div class="text-wrapper">
+        <div class="contents-title">
+            <h2>テキスト教材</h2>
+        </div>
+        <form action="" class="mb-3"></form>
+        <div class="texts-contents">
+            <% @ruby_rails_texts.each do |text| %>
+                <div class="texts-content">
+                    <%= link_to text do %>
+                        <p><%= text.title%></p>
+                        <p><%= text.genre%></p>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
