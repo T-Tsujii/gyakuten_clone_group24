@@ -148,3 +148,13 @@ body {
   }
   
 }
+
+.line-base-container {
+  @extend .base-container;
+  max-width: 720px;
+
+  .table-header{
+    background-color: #28a745;
+  }
+
+}
