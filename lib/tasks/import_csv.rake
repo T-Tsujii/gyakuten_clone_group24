@@ -27,5 +27,11 @@ namespace :import_csv do
         list = Import.csv_data(path: 'db/csv_data/question_data.csv')
         Question.create!(list)
     end
+
+    desc "テキスト教材 CSVデータのインポート"
+    task text_data: :environment do
+      list = Import.csv_data(path: 'db/csv_data/text_data.csv')
+      Text.create!(list)
+    end
 end
 
