@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :solutions, only: [:index, :create]
   end
 
-  resources :texts, only: %i[index]
+  resources :texts, only: %i[index show]
 end

@@ -4,6 +4,7 @@
   <div class="card-body">
     <h5 class="card-title"><%= text.title %></h5>
     <p class="card-text"><%= text.genre %></p>
+    <%= link_to "詳細ページ", text_path(text) %>
   </div>
 </div>
 <% end %>
