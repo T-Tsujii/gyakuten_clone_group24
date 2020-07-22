@@ -37,5 +37,14 @@ namespace :import_csv do
         RubyRailsText.create!(list)
     end
     
+    # rake import_csv:line_texts コマンドで
+    # line_dataファイルからデータベースにインポートできます
+    desc "LineText CSVデータのインポート"
+    task line_texts: :environment do
+        # インポートしたオブジェクト（Line@教材）を変数listに代入
+        list = Import.csv_data(path: 'db/csv_data/line_data.csv')
+        LineText.create!(list)
+    end
+
 end
 
