@@ -96,3 +96,37 @@ body {
     @extend .is-invalid;
   }
 }
+
+.text-base-container {
+  @extend .base-container;
+  max-width: 1200px;
+  h2 {
+    padding: 20px 0 10px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .text-content {
+    width: 710px;
+    margin: 0 auto;
+    .CodeRay {
+      .code {
+        pre {
+          padding: 10px;
+          font-size: 17px;
+          margin-bottom: 1rem;
+          border: 0.1px solid black;
+        }
+      }
+    }
+    h1 {
+      padding: 20px 0 10px;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 17px;
+      line-height: 1.9em;
+      display: block;
+    }
+  }
+}

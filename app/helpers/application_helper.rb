@@ -11,6 +11,14 @@ module ApplicationHelper
     end
   end
 
+  def base_container
+    if controller_name == "texts"
+      "text-base-container"
+    else
+      "base-container"
+    end
+  end
+
   class HTMLwithCoderay < Redcarpet::Render::HTML
     def block_code(code, language)
       language = language.split(':')[0] if language.present?

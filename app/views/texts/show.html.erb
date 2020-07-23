@@ -1,5 +1,5 @@
-<h4>詳細ページ</h4>
-<p><%= @text.title %></p>
-<p><%= @text.content %></p>
-
+<div class="text-content">
+  <h2><%= @text.title %></h2>
+  <%= markdown(@text.content).html_safe %>
+</div>
 <%= link_to "一覧ページ", texts_path %>
