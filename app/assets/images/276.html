@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="d6yqRbkoSiV9e9kheTOIUzRumBdXPSoQ6Nd5/P4FVPVhafDjetFZxTEpZJs/ouGtWQls2hZ31TRMQvcnAgxGmA==" />
+    
+    <meta charset="utf-8">
+<title>逆転教材 | CSVファイルの生成</title>
+<meta name="description" content="人生逆転サロンの教材です">
+<meta property="og:site_name" content="逆転教材">
+<meta property="og:title" content="CSVファイルの生成">
+<meta property="og:description" content="人生逆転サロンの教材です">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arcane-gorge-21903.herokuapp.com/texts/276">
+<meta property="og:image" content="https://arcane-gorge-21903.herokuapp.com/assets/texts/no_image-8bb43583fe764fd731fefdb7dc99b8c3f80e1f00894895d33267fb7924fc6ac6.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@yoshito410kam">
+    <link rel="stylesheet" media="all" href="/assets/application-7537a3be7221e068bae160d1f8450c0bf1730fab041a25cddc81164e3dbf5f00.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-4aaacc59b4beeb2f8d01104df6c9377241c178cef30724f07e5ffc71d887ff87.js" data-turbolinks-track="reload"></script>
+    
+  </head>
+
+  <body>
+    <section class="fixed-top base-color ">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="/">やんばるCODE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Rails
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/texts">Ruby/Rails教材</a>
+            <a class="dropdown-item" href="/movies">動画教材</a>
+            <a class="dropdown-item" href="/aws">AWS講座</a>
+            <a class="dropdown-item" href="/movies?genre=Live">ライブコーディング</a>
+            <a class="dropdown-item" href="/questions">質問集</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="/movies?genre=Php">PHP講座</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="/movies?genre=Talk">対談</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="/movies?genre=Marketing">情報発信</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="/movies?genre=Movie">動画編集講座</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="/movies?genre=Writing">ライティング講座</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="/movies?genre=Money">マネタイズ講座</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link active" href="/lines">LINE@</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link active" href="/users/edit">アカウント編集</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-item nav-link active" rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+</section>
+    
+    <div id="container" class="">
+      <section id="text-contents">
+  <h2>CSVファイルの生成</h2>
+    
+    <p>RubyでCSVファイルを生成する方法を確認していきましょう。</p>
+
+<p>前回のCSVインポートと同じディレクトリに移動し，サンプル用のファイルを作成しましょう。</p>
+<div class="text-danger">ターミナル</div><div class="CodeRay">
+  <div class="code"><pre>cd ruby/csv_sample
+touch write_sample.rb write.rb
+</pre></div>
+</div>
+
+<p>次の形式で <code>sample.csv</code> を作成することができます。</p>
+<div class="text-danger">write_sample.rb</div><div class="CodeRay">
+  <div class="code"><pre>require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">csv</span><span style="color:#710">&quot;</span></span>
+
+<span style="color:#036;font-weight:bold">CSV</span>.open(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sample.csv</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">wb</span><span style="color:#710">&quot;</span></span>) <span style="color:#080;font-weight:bold">do</span> |csv|
+  csv &lt;&lt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">id</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">name</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">email</span><span style="color:#710">&quot;</span></span>]
+  csv &lt;&lt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">1</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">佐藤</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">satou@example.com</span><span style="color:#710">&quot;</span></span>]
+  csv &lt;&lt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">2</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">鈴木</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">suzuki@example.com</span><span style="color:#710">&quot;</span></span>]
+  csv &lt;&lt; [<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">3</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">高橋</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">takahashi@example.com</span><span style="color:#710">&quot;</span></span>]
+<span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
+
+<p>それでは，実行してみましょう。  <code>sample.csv</code> が作成されます。</p>
+<div class="text-danger">ターミナル</div><div class="CodeRay">
+  <div class="code"><pre>ruby write_sample.rb
+</pre></div>
+</div>
+
+<p>作成された <code>sample.csv</code> を確認してみましょう。（macの場合，デフォルト設定なら）次のコマンドで開くことができます。</p>
+<div class="text-danger">ターミナル</div><div class="CodeRay">
+  <div class="code"><pre>open sample.csv
+</pre></div>
+</div>
+
+<p>次は，<a href="https://github.com/faker-ruby/faker" rel="nofollow" target="_blank">Faker</a> という gem を併用し，疑似個人情報を作成してみることにしましょう。</p>
+
+<p><code>Faker</code> はダミーデータを生成する gem です。インストールし，まずは <code>Faker</code> 単体の使い方を確認していきましょう。</p>
+<div class="text-danger">ターミナル</div><div class="CodeRay">
+  <div class="code"><pre>gem install faker
+pry
+</pre></div>
+</div>
+
+<p>ターミナルで <code>pry</code> を実行すると，対話的にRubyのプログラムを実行できます。以下を実行してみましょう。</p>
+<div class="text-danger">pry</div><div class="CodeRay">
+  <div class="code"><pre>require &quot;faker&quot;
+
+Faker::Name.name
+Faker::Name.name
+Faker::Name.name
+
+# 日本語に変更
+Faker::Config.locale = :ja
+
+Faker::Name.name
+Faker::Internet.email
+Faker::Internet.password
+Faker::Lorem.paragraph
+# Control キーを押しながら D を押すと pry を終了できます
+</pre></div>
+</div>
+
+<p>他にもいろいろなコマンドが用意されています。<a href="https://github.com/faker-ruby/faker#generators" rel="nofollow" target="_blank">FakerのReadme</a> を確認して試してみましょう。ｃ</p>
+
+<hr>
+
+<p>【問題】 <code>id</code>, <code>name</code>, <code>email</code> のカラムを持つ疑似的な個人情報が100件入ったCSVファイル <code>users.csv</code> を生成する Ruby のプログラムを <code>write.rb</code> にかきましょう。</p>
+
+<hr>
+
+<p>【回答例】</p>
+<div class="text-danger">write.rb</div><div class="CodeRay">
+  <div class="code"><pre>require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">csv</span><span style="color:#710">&quot;</span></span>
+require <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">faker</span><span style="color:#710">&quot;</span></span>
+<span style="color:#036;font-weight:bold">Faker</span>::<span style="color:#036;font-weight:bold">Config</span>.locale = <span style="color:#A60">:ja</span>
+
+<span style="color:#036;font-weight:bold">CSV</span>.open(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">users.csv</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">wb</span><span style="color:#710">&quot;</span></span>) <span style="color:#080;font-weight:bold">do</span> |csv|
+  csv &lt;&lt; <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">%w[</span><span style="color:#D20">id name email</span><span style="color:#710">]</span></span>
+  <span style="color:#00D">1</span>.upto(<span style="color:#00D">100</span>) <span style="color:#080;font-weight:bold">do</span> |i|
+    csv &lt;&lt; [i, <span style="color:#036;font-weight:bold">Faker</span>::<span style="color:#036;font-weight:bold">Name</span>.name, <span style="color:#036;font-weight:bold">Faker</span>::<span style="color:#036;font-weight:bold">Internet</span>.email]
+  <span style="color:#080;font-weight:bold">end</span>
+<span style="color:#080;font-weight:bold">end</span>
+</pre></div>
+</div>
+
+    <div id="read-text-276" class="mb-4">
+        <object><a class="btn btn-secondary btn-block" data-remote="true" rel="nofollow" data-method="post" href="/texts/276/read_texts">読破済みにする</a></object>
+
+    </div>
+  <div class='social-share-button' data-title='CSVファイルの生成' data-img=''
+data-url='' data-desc='' data-via=''>
+<a rel="nofollow " data-site="twitter" class="ssb-icon ssb-twitter" onclick="return SocialShareButton.share(this);" title="Twitterでシェアする" href="#"></a>
+</div>
+  <div class='social-share-button' data-title='CSVファイルの生成' data-img=''
+data-url='/texts/276' data-desc='' data-via=''>
+<a rel="nofollow " data-site="facebook" class="ssb-icon ssb-facebook" onclick="return SocialShareButton.share(this);" title="Facebookでシェアする" href="#"></a>
+</div>
+</section>
+    </div>
+    <footer class="fixed-bottom base-color ">
+  <a class="text-white" target="_blank" rel="noopener" href="http://utina.yoshitokamizato.com/">ブログ</a>
+  <a class="text-white" target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCwrDvYey9uKGBeh_l5IF-ag">Youtube</a>
+</footer>
+  </body>
+</html>
