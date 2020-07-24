@@ -2985,7 +2985,11 @@ app/views
 index.html.erb
 ```
 
+<<<<<<< HEAD
 上の記述の中で、`.html.erb`の部分は拡張子 となります。これはRails特有の拡張子で、`erb`は`embedded ruby`という意味になるます。`embedded`という単語が「埋め込まれた」という意味なので、「HTMLの中にrubyを埋め込むことができる」ということになります。
+=======
+上の記述の中で、`.html.erb`の部分は拡張子となります。これはRails特有の拡張子で、`erb`は`embedded ruby`という意味になるます。`embedded`という単語が「埋め込まれた」という意味なので、「HTMLの中にrubyを埋め込むことができる」ということになります。
+>>>>>>> master
 
 では、さっそく作成したビューファイルにHTMLの`h1`タグで`Hello World`を表示するコードを書いてみましょう。
 
@@ -3556,7 +3560,11 @@ rails s
 ```ruby
 Rails.application.routes.draw do
   # 以下のルーティングを追加
+<<<<<<< HEAD
   get '/users', to: 'users#index' 
+=======
+  get '/users', to: 'users#index'
+>>>>>>> master
   get '/users/new', to: 'users#new'
   post '/users', to: 'users#create'
 end
@@ -3669,7 +3677,11 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     user.delete
+<<<<<<< HEAD
   end 
+=======
+  end
+>>>>>>> master
 
   private
   def user_params
@@ -3707,7 +3719,11 @@ end
   <p>
     <%= user.name %><%= user.age %>
     <%= link_to '削除', ""/users/#{user.id}"", method: :delete, data: {confirm: ""削除しますか?""}  %>
+<<<<<<< HEAD
     <%= link_to '編集', ""/users/#{user.id}/edit"", method: :get %> 
+=======
+    <%= link_to '編集', ""/users/#{user.id}/edit"", method: :get %>
+>>>>>>> master
   </p>
 <% end %>
 ```

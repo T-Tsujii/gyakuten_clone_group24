@@ -1,0 +1,24 @@
+<section >
+    <h2 class="text-center pt-5">LINE@</h2>
+
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead class="line-text-table-head text-white">
+                <tr>
+                    <th class="w-1 table-header">No.</th>
+                    <th class="w-1 table-header">ジャンル</th>
+                    <th class="w-5 table-header">内容</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% @line_texts.each.with_index(1) do |text ,id| %>
+                <tr>
+                    <td><%= id %></td>
+                    <td><%= text.genre %></td>
+                    <td><%= link_to text.title ,line_text_path(text.id) %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+    </div>
+</section>

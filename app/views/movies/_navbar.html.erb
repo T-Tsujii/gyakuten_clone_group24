@@ -1,6 +1,10 @@
 <!-- Bootstrapを使用してナビバー追記 -->
 <section class='fixed-top'>
+  <% if controller.controller_name == "line_texts" %>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#28a745;">
+  <% else %>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#5D99FF;">
+  <% end %>  
     <a class="navbar-brand" href="/movies">Gyakuten</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -36,7 +40,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">マネタイズ講座</a>
         <li class="nav-item active">
-          <a class="nav-link" href="#">LINE@</a>
+          <%= link_to "LINE@", line_texts_path,{class: "nav-link"} %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item active">
