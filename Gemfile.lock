@@ -274,6 +274,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3)
   rails-i18n
+  ransack
   redcarpet
   sass-rails (>= 6)
   spring

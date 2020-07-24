@@ -1,5 +1,11 @@
-<h3>テキスト一覧ページ</h3>
 <div class="lesson-container">
+  <div class="lesson-header">
+    <h3>テキスト教材</h3>
+    <%= search_form_for @q do |form| %>
+      <%= form.search_field :title_cont %>
+      <%= form.submit "検索" %>
+    <% end %>
+  </div>
   <div class="lesson-row">
     <% @texts.each do |text| %>
       <div class="lesson-card col-4">
