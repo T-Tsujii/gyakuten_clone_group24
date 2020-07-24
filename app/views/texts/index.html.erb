@@ -1,10 +1,19 @@
 <h3>テキスト一覧ページ</h3>
-<% @texts.each do |text| %>
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title"><%= text.title %></h5>
-    <p class="card-text"><%= text.genre %></p>
-    <%= link_to "詳細ページ", text_path(text) %>
+<div class="lesson-container">
+  <div class="lesson-row">
+    <% @texts.each do |text| %>
+      <div class="lesson-card col-4">
+        <a href="<%= text_path(text) %>" class="card-body rounded">
+          <div class="thumbnail-enlarge">
+            <%= image_tag "image.png", class: "card-img-top" %>
+          </div>
+          <div class="content-wrapper">
+            <div class="btn btn-primary btn-block">読破済みにする</div>
+            <h3 class="card-title"><%= text.title %></h5>
+            <p class="card-text">【<%= text.genre %>】</p>
+          </div>
+        </a>
+      </div>
+    <% end %>
   </div>
 </div>
-<% end %>
