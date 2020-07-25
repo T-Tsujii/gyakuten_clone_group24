@@ -5,6 +5,8 @@ require("channels")
 // Bootstrapで必要なファイルを以下追加
 require("bootstrap/dist/js/bootstrap")
 
+require('jquery')
+
 document.addEventListener('turbolinks:load', function() {
   document.getElementById("search_box").addEventListener('keyup',function(){
     document.getElementById("search_trigger").click();

@@ -1,6 +1,8 @@
+<%= javascript_include_tag 'demo_js' %>
+
 <div class="lesson-container">
   <div class="lesson-header">
-    <h3>テキスト教材</h3>
+    <h3 id="search_box1">テキスト教材</h3>
     <%= search_form_for @q do |form| %>
       <div class="input-group justify-content-center">
         <div class="input-group-prepend">
@@ -13,7 +15,7 @@
       </div>
     <% end %>
   </div>
-  <div class="lesson-row">
+  <div class="lesson-row" id="top-wrapper">
     <% @texts.each do |text| %>
       <div class="lesson-card col-4">
         <a href="<%= text_path(text) %>" class="card-body rounded">
