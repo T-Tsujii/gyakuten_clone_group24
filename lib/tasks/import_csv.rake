@@ -19,6 +19,15 @@ namespace :import_csv do
         Movie.create!(list)
     end
 
+    # rake import_csv:all_movies コマンドで
+    # all_movie_dataファイルからデータベースにインポートできます
+    desc "AllMovie CSVデータのインポート"
+    task all_movies: :environment do
+        # インポートしたオブジェクト（Rails動画教材）を変数listに代入
+        list = Import.csv_data(path: 'db/csv_data/all_movie_data.csv')
+        AllMovie.create!(list)
+    end
+
     # rake import_csv:questions コマンドで
     # question_dataファイルからデータベースにインポートできます
     desc "Quiestion CSVデータのインポート"

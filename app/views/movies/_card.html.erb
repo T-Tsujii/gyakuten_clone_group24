@@ -1,0 +1,38 @@
+<div id="container">
+    <div class="container-fluid">
+        <div class="row">
+            <% @movies.each do |movie| %>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="video-card border-dark mb-3">
+                        <div class="card-header p-0">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe width="560" height="315" src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body text-dark movie-body">
+                                <p id="watched-movie-<%= movie.id %>">
+                                    
+                                        <% if movie.watched_movie == false %>
+                                            <% if controller_name == "movies" %>
+                                                <%= link_to '視聴済みにする', movie_path(movie.id), method: :patch, class: "btn btn-secondary btn-block" %>
+                                            <% else %>
+                                                <%= link_to '視聴済みにする', monetize_path(movie.id), method: :patch, class: "btn btn-secondary btn-block" %>
+                                            <% end %>
+                                        <% else %>
+                                            <% if controller_name == "movies" %>
+                                                <%= link_to '視聴済みを解除', movie_path(movie.id), method: :patch, class: "btn btn-primary btn-block" %>
+                                            <% else %>
+                                                <%= link_to '視聴済みを解除', monetize_path(movie.id), method: :patch, class: "btn btn-primary btn-block" %>
+                                            <% end%>
+                                        <% end %>
+                                    
+                                </p>
+                                <p class="card-text movie-title"><%= movie.title %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <%= paginate @movies %>
+    </div>
+</div>

@@ -4,7 +4,7 @@ require "coderay"
 module ApplicationHelper
 
   def base_container
-    if controller_name == "movies"
+    if controller_name == "movies" || "monetizes"
       "video-base-container"
     elsif controller_name == "ruby_rails_texts"
       "ruby-rails-base-container"
