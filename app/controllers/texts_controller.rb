@@ -1,7 +1,7 @@
 class TextsController < ApplicationController
   def index
-    @q = Text.ransack(params[:q])
-    @texts = @q.result
+    @texts = Text.all
+    @text = Text.new
   end
 
   def show

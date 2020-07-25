@@ -1,19 +1,16 @@
-<%= javascript_include_tag 'demo_js' %>
+<%= javascript_include_tag 'filtering_js' %>
 
 <div class="lesson-container">
   <div class="lesson-header">
-    <h3 id="search_box1">テキスト教材</h3>
-    <%= search_form_for @q do |form| %>
+    <h3>テキスト教材</h3>
+    <form>
       <div class="input-group justify-content-center">
         <div class="input-group-prepend">
           <div class="input-group-text"><i class="fas fa-search"></i></div>
         </div>
-        <%= form.search_field :title_cont, id: "search_box", class: "form-control col-3", placeholder: "教材を探す" %>
-        <span class="input-group-btn">
-          <%= form.submit "検索", id: "search_trigger", style: "display: none;" %>
-        </span>
+        <input type="text" id="search_box" class="form-control col-3" placeholder="教材を探す">
       </div>
-    <% end %>
+    </form>
   </div>
   <div class="lesson-row" id="top-wrapper">
     <% @texts.each do |text| %>
@@ -24,8 +21,8 @@
           </div>
           <div class="content-wrapper">
             <div class="btn btn-primary btn-block">読破済みにする</div>
-            <h3 class="card-title"><%= text.title %></h5>
-            <p class="card-text">【<%= text.genre %>】</p>
+              <h3 class="card-title"><%= text.title %></h5>
+              <p class="card-text">【<%= text.genre %>】</p>
           </div>
         </a>
       </div>

@@ -7,10 +7,4 @@ require("bootstrap/dist/js/bootstrap")
 
 require('jquery')
 
-document.addEventListener('turbolinks:load', function() {
-  document.getElementById("search_box").addEventListener('keyup',function(){
-    document.getElementById("search_trigger").click();
-  });
-})
-
 require("@fortawesome/fontawesome-free/js/all")
