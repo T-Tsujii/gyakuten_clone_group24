@@ -11,6 +11,5 @@ Rails.application.routes.draw do
   end
   resources :ruby_rails_texts, only: [:index, :show]
   resources :line_texts, only: [:index, :show]
-  resources :all_movies, only: [:index, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
