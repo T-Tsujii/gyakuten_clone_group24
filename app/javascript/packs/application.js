@@ -5,6 +5,5 @@ require("channels")
 // Bootstrapで必要なファイルを以下追加
 require("bootstrap/dist/js/bootstrap")
 
-require('jquery')
-
 require("@fortawesome/fontawesome-free/js/all")
+require('./filtering')
