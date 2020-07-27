@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'movies#index'
   resources :movies, only: [:index, :update]
+  resources :movies do
+    resource :watched_movies, only: [:create, :destroy]
+    resource :watched_all_movies, only: [:create, :destroy]
+  end
   resources :aws_texts, only: [:index]
   resources :questions, only: [:index, :show, :create] do
     resources :solutions, only: [:index, :create]

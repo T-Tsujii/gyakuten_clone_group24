@@ -1,6 +1,6 @@
-class CreateWatchedMovies < ActiveRecord::Migration[6.0]
+class CreateWatchedAllMovies < ActiveRecord::Migration[6.0]
   def change
-    create_table :watched_movies do |t|
+    create_table :watched_all_movies do |t|
       t.references :user, null: false, foreign_key: true
       t.references :movie, null: false, foreign_key: true
 

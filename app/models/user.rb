@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
 
   has_many :watched_movies
+  has_many :watched_all_movies
 end
