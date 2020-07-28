@@ -11,10 +11,10 @@
                 </tr>
             </thead>
             <tbody>
-            <% @aws_texts.each.with_index(1) do |text ,id| %>
+            <% @aws_texts.each.with_index(1) do |aws_text ,id| %>
                 <tr>
-                    <td><%= id %></td>
-                    <td><%= text.title %></td>
+                    <th scope="row"><td><%= id %></td>
+                    <td><%= link_to "#{aws_text.title}", aws_text_path(aws_text) %></td>
                 </tr>
             <% end %>
             </tbody>
