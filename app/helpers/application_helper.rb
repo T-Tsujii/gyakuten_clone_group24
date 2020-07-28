@@ -6,8 +6,8 @@ module ApplicationHelper
   def base_container
     if controller_name == "movies"
       "video-base-container"
-    elsif controller_name == "ruby_rails_texts"
-      "ruby-rails-base-container"
+    elsif controller_name == "texts"
+      "lesson-base-container"
     elsif controller_name == "line_texts"
       "line-base-container"
     else

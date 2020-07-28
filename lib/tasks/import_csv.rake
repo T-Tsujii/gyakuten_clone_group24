@@ -27,16 +27,13 @@ namespace :import_csv do
         list = Import.csv_data(path: 'db/csv_data/question_data.csv')
         Question.create!(list)
     end
-    
-    # rake import_csv:ruby_rails_texts コマンドで
-    # text_dataファイルからデータベースにインポートできます
-    desc "RubyRailsText CSVデータのインポート"
-    task ruby_rails_texts: :environment do
-        # インポートしたオブジェクト（RubyRailsテキスト教材）を変数listに代入
-        list = Import.csv_data(path: 'db/csv_data/text_data.csv')
-        RubyRailsText.create!(list)
+
+    desc "テキスト教材 CSVデータのインポート"
+    task text_data: :environment do
+      list = Import.csv_data(path: 'db/csv_data/text_data.csv')
+      Text.create!(list)
     end
-    
+
     # rake import_csv:line_texts コマンドで
     # line_dataファイルからデータベースにインポートできます
     desc "LineText CSVデータのインポート"
