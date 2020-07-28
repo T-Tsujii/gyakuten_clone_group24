@@ -1,5 +1,5 @@
-<section >
-    <h2 class="text-center pt-5">AWS講座</h1>
+<section>
+    <h1 class="text-center pt-5">AWS講座</h1>
     <p>注意！！！：AWSのEC2やRDSは有料サービスとなります。無駄な料金を請求されないためにも、不要なインスタンスは停止・削除をしてください。</p>
 
     <div class="table-container">
@@ -11,10 +11,10 @@
                 </tr>
             </thead>
             <tbody>
-            <% @aws_texts.each.with_index(1) do |text ,id| %>
+            <% @aws_texts.each.with_index(1) do |aws_text ,id| %>
                 <tr>
-                    <td><%= id %></td>
-                    <td><%= text.title %></td>
+                    <th scope="row"><%= id %></th>
+                    <td><%= link_to "#{aws_text.title}", aws_text_path(aws_text) %></td>
                 </tr>
             <% end %>
             </tbody>
