@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :movies, only: [:index, :update]
   resources :movies do
     resource :watched_movies, only: [:create, :destroy]
-    resource :watched_all_movies, only: [:create, :destroy]
   end
   resources :aws_texts, only: [:index]
   resources :questions, only: [:index, :show, :create] do

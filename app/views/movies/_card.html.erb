@@ -10,19 +10,11 @@
                             </div>
                             <div class="card-body text-dark movie-body">
                                 <p id="watched-movie-<%= movie.id %>">
-                                <% if movie.attribute_present?(:category) == false %>
                                     <% if movie.watched_movie_by?(current_user) %>                                            
-                                        <%= link_to '視聴済みを解除', movie_watched_movies_path(movie.id), method: :delete, class: "btn btn-primary btn-block" %>
+                                        <%= link_to '視聴済みを解除', movie_watched_movies_path(movie.id), method: :delete, class: "btn btn-primary btn-block button_watched" %>
                                     <% else %>
-                                        <%= link_to '視聴済みにする', movie_watched_movies_path(movie.id), method: :post, class: "btn btn-secondary btn-block" %>
+                                        <%= link_to '視聴済みにする', movie_watched_movies_path(movie.id), method: :post, class: "btn btn-secondary btn-block button_watched" %>
                                     <% end %>
-                                <% else %>
-                                    <% if movie.watched_all_movie_by?(current_user) %>                                            
-                                        <%= link_to '視聴済みを解除', movie_watched_all_movies_path(movie.id), method: :delete, class: "btn btn-primary btn-block" %>
-                                    <% else %>
-                                        <%= link_to '視聴済みにする', movie_watched_all_movies_path(movie.id), method: :post, class: "btn btn-secondary btn-block" %>
-                                    <% end %>
-                                <% end %>
                                 </p>
                                 <p class="card-text movie-title"><%= movie.title %></p>
                             </div>
