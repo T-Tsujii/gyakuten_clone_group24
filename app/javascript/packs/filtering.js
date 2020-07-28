@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', event => {
+$(document).on('turbolinks:load', _ => {
   $("#search_box").on('keyup', (event) => {
     const $this = $(event.target);
     const $myInput = $this.val().toLowerCase();
@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', event => {
       $lessonCard.show();
     } else {
       $lessonCard.hide();
-      $lessonCard.each((i, element) => {
+      $lessonCard.each((_, element) => {
         const $this = $(element);
         if ($this.find(".card-title").text().toLowerCase().includes($myInput) ) {
           $this.show();
