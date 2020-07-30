@@ -4,4 +4,8 @@ class AwsTextsController < ApplicationController
         @aws_texts = AwsText.all
     end
 
+    def show
+        @aws_text = AwsText.find(params[:id])
+    end
+
 end

@@ -1,0 +1,29 @@
+<div class="lesson-container">
+  <div class="lesson-header">
+    <h3>テキスト教材</h3>
+    <form>
+      <div class="input-group justify-content-center">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fas fa-search"></i></div>
+        </div>
+        <input type="text" id="search_box" class="form-control col-3" placeholder="教材を探す">
+      </div>
+    </form>
+  </div>
+  <div class="lesson-row" id="top-wrapper">
+    <% @texts.each do |text| %>
+      <div class="lesson-card col-4">
+        <a href="<%= text_path(text) %>" class="card-body rounded">
+          <div class="thumbnail-enlarge">
+            <%= image_tag "image.png", class: "card-img-top" %>
+          </div>
+          <div class="content-wrapper">
+            <div class="btn btn-primary btn-block">読破済みにする</div>
+              <h3 class="card-title"><%= text.title %></h3>
+              <p class="card-text">【<%= text.genre %>】</p>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>

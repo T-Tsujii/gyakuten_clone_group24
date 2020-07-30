@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   resources :movies do
     resource :watched_movies, only: [:create, :destroy]
   end
-  resources :aws_texts, only: [:index]
+  resources :aws_texts, only: [:index, :show]
   resources :questions, only: [:index, :show, :create] do
     resources :solutions, only: [:index, :create]
   end
-  resources :ruby_rails_texts, only: [:index, :show]
+
+  resources :texts
   resources :line_texts, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
