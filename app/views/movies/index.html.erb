@@ -1,17 +1,24 @@
-<div class="row justify-content-center">
-  <% @movies.each do |movie| %>
-    <div class="col-md-4 mb-5">
-      <div class="video-card video-container h-100">
-        <div class="embed-responsive embed-responsive-16by9 video-expander">
-          <iframe width="560" height="315" src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div id="container">
+    <div class="container-fluid">
+        <div class="row">
+            <% @movies.each do |movie| %>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="video-card border-dark mb-3">
+                        <div class="card-header p-0">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe width="560" height="315" src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body text-dark movie-body">
+                                <p id="watched-button-<%= movie.id %>">
+                                    <%= render partial: 'watched_movies/watched_movie', locals: { movie: movie} %>
+                                </p>
+                                <p class="card-text movie-title"><%= movie.title %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
         </div>
-        <div class="card-body">
-          <h4 class="card-title ratio-1_1"><%= movie.title %></h4>
-        </div>
-      </div>
+        <%= paginate @movies %>
     </div>
-  <% end %>
-</div>
-<div class="row justify-content-center">
-  <%= paginate @movies %>
 </div>

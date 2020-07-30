@@ -1,6 +1,9 @@
 @import "bootstrap/scss/bootstrap";
 $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/brands";
 
 .base-container {
     max-width: 768px;
@@ -18,40 +21,119 @@ body {
     padding-top: 80px;
   }
 
-.video-card {
-  @extend .card;
-  @extend .border-primary;
-  @extend .rounded;
-  background: #ddd;
-  border: 1px #ff0000 solid;
-  padding: 0 5px 0px;
-  margin-bottom: 5px;
+#container{
+  @media screen and (min-width: 1200px){
+    width: 1200px;
+  }
+  @media screen and (min-width: 992px){
+    width: 990px;
+    padding: 120px 0 80px 0;
+    margin: 0 auto;
+  }
+  @media screen and (min-width: 0px){
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0 160px 0;
+  }
+}
 
+.container-fluid{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
-.card-title {
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
 }
-.video-container {
+
+.video-card {
   position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 0.25rem;
 }
-.video-expander {
+.embed-responsive-16by9::before {
+  padding-top: 56.25%;
+}
+.embed-responsive::before {
+  display: block;
+  content: "";
+}
+.embed-responsive iframe{
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 0;
-  width: 105%;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
-.ratio-1_1:before {
-  content: "";
-  display: block;
-  padding-top: 80%;
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
 }
+
+.movie-body{
+  @media screen and (min-width: 992px){
+    height: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media screen and (min-width: 0px){
+    height: 290px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+#container p{
+  @media screen and (min-width: 992px){
+    font-size: 17px;
+  }
+  @media screen and (min-width: 0px){
+    font-size: 2.2em;
+    line-height: 1.9em;
+  }
+}
+
+@media screen and (min-width: 0px){
+  #container p.movie-title {
+      height: 200px;
+      font-size: 1.7rem;
+      line-height: 1.5em;
+  }
+}
+
+#container p{
+  @media screen and (min-width: 992px){
+    font-size: 17px;
+  }
+  @media screen and (min-width: 0px){
+    font-size: 2.2em;
+    line-height: 1.9em;
+  }
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
 .video-base-container {
   @extend .base-container;
-  max-width: 1020px;
-}
+  max-width: 1220px;
+} 
 
 .question-container {
   padding: 30px 0;

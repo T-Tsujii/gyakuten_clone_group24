@@ -1,0 +1,5 @@
+<% if movie.watched_movie_by?(current_user) %>                                            
+    <%= link_to '視聴済みを解除', movie_watched_movies_path(movie.id), method: :delete, class: "btn btn-primary btn-block button_watched", remote: true %>
+<% else %>
+    <%= link_to '視聴済みにする', movie_watched_movies_path(movie.id), method: :post, class: "btn btn-secondary btn-block button_watched", remote: true %>
+<% end %>
