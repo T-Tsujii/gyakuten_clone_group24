@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable
 
-  def remember_me
-    true
-  end
+  has_many :watched_movies
+
 end
