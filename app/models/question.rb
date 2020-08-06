@@ -3,4 +3,5 @@ class Question < ApplicationRecord
     validates :detail, presence: true
 
     has_many :solutions
+    has_many :views
 end

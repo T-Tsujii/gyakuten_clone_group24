@@ -11,16 +11,29 @@ class QuestionsController < ApplicationController
         redirect_to questions_path, notice: "質問を受け付けました。"
       else
         @questions = Question.order(id: :desc)
-        flash.now[:alert] = "記入漏れがあります。"
         render :index
       end
     end
 
     def show
-        @question = Question.find(params[:id])
-        @solution = Solution.new
+      @question = Question.find(params[:id])
+      @solution = Solution.new
+      if @question.views.find_by(user_id: current_user.id).blank?
+        view = @question.views.build(user_id: current_user.id)
+        view.save
+      end
     end
 
+    def edit 
+      @question = Question.find(params[:id])
+    end
+
+    def update
+      @question = Question.find(params[:id])
+      @question.update(question_params)
+      flash[:notice] = "質問を修正しました"
+      redirect_to questions_path
+    end
 
     private
 

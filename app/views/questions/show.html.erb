@@ -1,5 +1,6 @@
 
 <div id="container">
+    <%= link_to "質問内容を修正", edit_question_path(@question.id), class: 'btn btn-warning btn-block' %>
     <h3>【質問】</h3>
     <p><%= @question.title %></p>
     <hr>

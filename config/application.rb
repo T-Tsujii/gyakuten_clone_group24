@@ -34,5 +34,6 @@ module GyakutenCloneGroup
 
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
+    config.active_model.i18n_customize_full_message = true
   end
 end
