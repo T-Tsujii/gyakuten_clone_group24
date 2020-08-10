@@ -12,7 +12,7 @@
                                 <p id="watched-button-<%= movie.id %>">
                                     <%= render partial: 'watched_movies/watched_movie', locals: { movie: movie} %>
                                 </p>
-                                <p class="card-text movie-title"><%= movie.title %></p>
+                                <p class="card-text movie-title">Lv. <%= @movies_all.index(movie) + 1 %> : <%= movie.title %></p>
                             </div>
                         </div>
                     </div>
