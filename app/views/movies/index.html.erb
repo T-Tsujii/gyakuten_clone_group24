@@ -1,7 +1,7 @@
 <div id="container">
     <div class="container-fluid">
         <div class="row">
-            <% @movies.each do |movie| %>
+            <% @movies.each.with_index(@movies.offset_value + 1) do |movie, idx| %>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="video-card border-dark mb-3">
                         <div class="card-header p-0">
@@ -12,7 +12,11 @@
                                 <p id="watched-button-<%= movie.id %>">
                                     <%= render partial: 'watched_movies/watched_movie', locals: { movie: movie} %>
                                 </p>
-                                <p class="card-text movie-title">Lv. <%= @movies_all.index(movie) + 1 %> : <%= movie.title %></p>
+                                <% if params[:category].nil? %>
+                                    <p class="card-text movie-title">Lv. <%= "#{idx}" %> : <%= movie.title %></p>
+                                <% else %>
+                                    <p class="card-text movie-title"><%= movie.title %></p>
+                                <% end %>
                             </div>
                         </div>
                     </div>
