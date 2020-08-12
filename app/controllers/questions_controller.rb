@@ -19,8 +19,7 @@ class QuestionsController < ApplicationController
       @question = Question.find(params[:id])
       @solution = Solution.new
       if @question.views.find_by(user_id: current_user.id).blank?
-        view = @question.views.build(user_id: current_user.id)
-        view.save
+        @question.views.create(user_id: current_user.id)
       end
     end
 

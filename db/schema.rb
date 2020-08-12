@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_142015) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_views_on_question_id"
+    t.index ["user_id", "question_id"], name: "index_views_on_user_id_and_question_id", unique: true
     t.index ["user_id"], name: "index_views_on_user_id"
   end
 

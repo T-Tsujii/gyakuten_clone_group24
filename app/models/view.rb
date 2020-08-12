@@ -1,4 +1,7 @@
 class View < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  belongs_to :question, dependent: :destroy
+  validates :user_id, presence: true
+  validates :question_id, presence: true
+
+  belongs_to :user
+  belongs_to :question
 end
