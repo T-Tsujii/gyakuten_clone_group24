@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
     def index
-      @questions = Question.order(id: :desc)
+      @questions = Question.order(id: :desc).includes(:views)
       @question = Question.new
     end
 
