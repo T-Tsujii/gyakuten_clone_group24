@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :watched_movies, only: [:create, :destroy]
   end
   resources :aws_texts, only: [:index, :show]
-  resources :questions, only: [:index, :show, :create] do
+  resources :questions, except: [:destroy] do
     resources :solutions, only: [:index, :create]
   end
 

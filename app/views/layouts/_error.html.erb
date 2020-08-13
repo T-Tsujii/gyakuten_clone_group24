@@ -1,7 +1,7 @@
 <% if @question.errors.any? %>
-  <ul class="alert alert-danger" >
+    <p class="alert alert-danger"><%= @question.errors.count %>つのエラーがあります。</p>
     <% @question.errors.full_messages.each do |msg| %>
-      <li class="text-danger" role="alert"><%= msg %></li>
+  
+      <li class="" role="alert" style="color: red;"><%= msg %></li>
     <% end %>
-  </ul>
 <% end %>
