@@ -15,7 +15,9 @@
       <div class="lesson-card col-4">
         <a href="<%= text_path(text) %>" class="card-body rounded">
           <div class="thumbnail-enlarge">
-            <%= image_tag "image.png", class: "card-img-top" %>
+          
+            <%= image_tag text.image.url, class: "card-img-top" %>
+          
           </div>
           <div class="content-wrapper">
             <div class="btn btn-primary btn-block">読破済みにする</div>
