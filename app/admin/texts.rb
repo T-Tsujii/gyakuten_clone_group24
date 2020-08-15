@@ -1,3 +1,3 @@
 ActiveAdmin.register Text do
-    permit_params :image, :encrypted_password
-  end
+    permit_params :image, :genre, :title, :content
+end
