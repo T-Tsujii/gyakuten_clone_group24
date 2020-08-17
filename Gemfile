@@ -20,6 +20,7 @@ gem 'devise-bootstrap-views'
 gem 'kaminari'
 gem 'redcarpet'
 gem 'coderay'
+gem 'fog-aws'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
